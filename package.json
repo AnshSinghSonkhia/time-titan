@@ -1,0 +1,32 @@
+{
+  "name": "time-titan",
+  "version": "1.0.0",
+  "description": "Time manipulation library: Control and modify time effortlessly for testing, animations, or creative projects.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "type": "module",
+  "jest": {
+    "transform": {}
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnshSinghSonkhia/time-titan.git"
+  },
+  "keywords": [
+    "time-manipulation"
+  ],
+  "author": "Ansh Singh Sonkhia",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AnshSinghSonkhia/time-titan/issues"
+  },
+  "homepage": "https://github.com/AnshSinghSonkhia/time-titan#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

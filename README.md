@@ -2,10 +2,20 @@
 
 **Time manipulation library for JavaScript. Control and modify time effortlessly for testing, animations, or creative projects.**
 
+
+[![npm](https://img.shields.io/npm/v/time-titan.svg)](https://www.npmjs.com/package/time-titan)  [![License](https://img.shields.io/npm/l/time-titan.svg)](LICENSE)  
+
+
 ## Installation
 ```sh
-npm install time-titan
+npm i time-titan
 ```
+via yarn:
+
+```sh
+yarn add time-titan
+```
+
 
 ## Usage
 ```js

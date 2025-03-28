@@ -7,8 +7,7 @@ import decelerate from './src/decelerate.js';
 import reset from './src/reset.js';
 import mockDate from './src/mockDate.js';
 import pause from './src/pause.js';
-import resume from './src/resume.js';
-import loop from './src/loop.js';
+import { resume, loop } from './src/resume.js';
 import saveCheckpoint from './src/saveCheckpoint.js';
 import restoreCheckpoint from './src/restoreCheckpoint.js';
 
@@ -19,6 +18,7 @@ class TimeTitan {
     this.checkpoint = null;
     this.loopInterval = null;
     this.timeMultiplier = 1;
+    this.startTime = Date.now();
   }
 
   freeze() {
@@ -33,6 +33,7 @@ class TimeTitan {
 
   setTime(timestamp) {
     Date.now = () => timestamp;
+    this.startTime = timestamp;
   }
 
   warp(milliseconds) {
@@ -66,7 +67,8 @@ class TimeTitan {
   }
 
   resume() {
-    this.unfreeze();
+      this.unfreeze();
+      this.startTime = Date.now();
   }
 
   loop(start, end, speed) {
@@ -83,11 +85,13 @@ class TimeTitan {
 
   saveCheckpoint() {
     this.checkpoint = Date.now();
+    return this.checkpoint;
   }
 
   restoreCheckpoint() {
     if (this.checkpoint !== null) {
-      Date.now = () => this.checkpoint;
+    //   Date.now = () => this.checkpoint;
+    this.startTime = this.checkpoint;
     }
   }
 }
